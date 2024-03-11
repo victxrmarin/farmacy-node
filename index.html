@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        const zeroFill = n => {
+            return ('0' + n).slice(-2);
+        }
+        const interval = setInterval(() => {
+            const now = new Date();
+            const dataHora = zeroFill(now.getUTCDate()) + '/' + zeroFill((now.getMonth() + 1)) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+            document.getElementById('data-hora').innerHTML = dataHora;
+        }, 1000);
+    </script>
+    <link rel="stylesheet" href="./view/style/index.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Dashboard</h1>
+        <span id="data-hora"></span>
+    </header>
+    <main>
+        <section>
+            <div>
+                <a href="./view/customer.html"><button>Customers</button></a>
+                <a href="./view/medicine.html"></a><button>Medicines</button>
+            </div>
+            <div>
+                <a href="./view/sale.html"><button>Sales</button></a>
+                <a href="./view/supplier.html"><button>Suppliers</button></a>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

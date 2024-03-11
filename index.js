@@ -1,12 +1,12 @@
 const express = require("express");
 const fs = require("fs");
 const dotenv = require("dotenv")
+const cors = require('cors');
 
 const customer = require("./routes/customer");
 const medicine = require("./routes/medicine");
 const sale = require("./routes/sale");
 const supplier = require("./routes/supplier");
-
 
 const PORT = process.env.PORT || 3000;
 
