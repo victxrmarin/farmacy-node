@@ -1,4 +1,5 @@
-const db = require("../db.json");
+const db = require("./db.json");
+const fs = require("fs");
 const express = require("express");
 const router = express.Router();
 
@@ -8,13 +9,13 @@ router.post("/", (req, res) => {
     return res.status(400).json({ message: "db Incompleted" });
   } else {
     db.Suppliers.push(newSupplier);
-    savedb(db);
+    saveData(db);
     return res.status(201).json({ message: "db completed." });
   }
 });
 
 router.get("/", (req, res) => {
-  return res.json(db.Supplierss);
+  return res.json(db.Suppliers);
 });
 
 router.put("/:id", (req, res) => {
@@ -33,19 +34,19 @@ router.put("/:id", (req, res) => {
   db.Suppliers[index].phone_number =
     update.phone_number || db.Suppliers[index].phone_number;
 
-  savedb(db);
+  saveData(db);
   return res.json({ message: "Update sucessfully." });
 });
 
 router.delete("/:id", (req, res) => {
   const id = parseInt(req.params.id);
   db.Suppliers = db.Suppliers.filter((Suppliers) => Suppliers.id !== id);
-  savedb(db);
+  saveData(db);
   return res.status(200).json({ message: "Suppliers deleted." });
 });
 
 function saveData() {
-  fs.writeFileSync(__dirname + "/db.json", JSON.stringify(data, null, 2));
+  fs.writeFileSync(__dirname + "/db.json", JSON.stringify(db, null, 2));
 }
 
 module.exports = router;

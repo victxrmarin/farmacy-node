@@ -1,4 +1,5 @@
-const db = require("../db.json");
+const db = require("./db.json");
+const fs = require("fs");
 const express = require("express");
 const router = express.Router();
 
@@ -8,7 +9,7 @@ router.post("/", (req, res) => {
     return res.status(400).json({ message: "Data Incompleted" });
   } else {
     db.Customers.push(newCustomer);
-    savedb(db);
+    saveData(db);
     return res.status(201).json({ message: "Data completed." });
   }
 });
@@ -32,19 +33,19 @@ router.put("/:id", (req, res) => {
   db.Customers[index].address = update.address || db.Customers[index].address;
   db.Customers[index].email = update.email || db.Customers[index].email;
 
-  savedb(db);
+  saveData(db);
   return res.json({ message: "Update sucessfully." });
 });
 
 router.delete("/:id", (req, res) => {
   const id = parseInt(req.params.id);
   db.Customers = db.Customers.filter((Customers) => Customers.id !== id);
-  savedb(db);
+  saveData(db);
   return res.status(200).json({ message: "Customers deleted." });
 });
 
 function saveData() {
-  fs.writeFileSync(__dirname + "/db.json", JSON.stringify(data, null, 2));
+  fs.writeFileSync(__dirname + "/db.json", JSON.stringify(db, null, 2));
 }
 
 module.exports = router
