@@ -1,0 +1,37 @@
+{
+    "Medicines": [
+        {
+            "id": null,
+            "name": null,
+            "producer": null,
+            "quantity": null
+        }
+    ],
+
+    "Customers": [
+        {
+            "id": null,
+            "name": null,
+            "email": null,
+            "phone_number": null
+        }
+    ],
+
+    "Suppliers": [
+        {
+            "id": null,
+            "name": null,
+            "address": null,
+            "phone_number": null
+        }
+    ],
+
+    "Sales": [
+        {
+            "id": null,
+            "date": null,
+            "id_medicine": null,
+            "id_customer": null
+        }
+    ]
+}
