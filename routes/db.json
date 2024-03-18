@@ -6,6 +6,18 @@
       "name": "Victor Marin",
       "email": "victormarin.dev@gmail.com",
       "phone_number": "51984871884"
+    },
+    {
+      "id": 2,
+      "name": "Bruno",
+      "email": "victormarin.dev@gmail.com",
+      "phone_number": "51984871884"
+    },
+    {
+      "id": 3,
+      "name": "Bruno",
+      "email": "victormarin.dev@gmail.com",
+      "phone_number": "51984871884"
     }
   ],
   "Suppliers": [

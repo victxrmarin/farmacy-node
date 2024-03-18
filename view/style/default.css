@@ -28,9 +28,9 @@ form button {
     position: relative;
 }
 
-button {
+#voltar {
     position: absolute;
-    bottom: 2%;
+    bottom: 1%;
     left: 1%;
 }
 
@@ -47,10 +47,23 @@ section li {
     background-color: grey;
 }
 
-ul li button {
-    position: relative;
+thead {
+    color: white;
 }
 
-th {
-    color: black;
+table {
+    background-color: rgb(0, 0, 0);
+    border: 1px solid black;
 }
+
+td {
+
+    padding-left: 5px;
+    padding-right: 5px ;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+}
+
+
+
+

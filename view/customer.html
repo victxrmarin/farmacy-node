@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,39 @@
     <link rel="stylesheet" href="./style/default.css">
     <title>Customer's List</title>
 </head>
+
 <body>
-    
+
     <aside>
         <h1>Customers</h1>
         <form id="customer-form">
-        <label for="name">Nome:</label>
-        <input type="text" id="name" required>
-        
-        <label for="email">Idade:</label>
-        <input type="text" id="email" required>
-        
-        <label for="phone">Curso:</label>
-        <input type="number" id="phone" required>
-    
-        <button type="submit">Adicionar Usuário</button>
-    </form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" required>
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" required>
+
+            <label for="phone">Phone:</label>
+            <input type="number" id="phone" required>
+            <button type="submit">Adicionar Usuário</button>
+        </form>
 
     </aside>
     <section>
-    <h1>Customer's List</h1>
-
-    <table id="customer-list">
-
-    </table>
-    
+        <h1>Customer's List</h1>
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+            </thead>
+            <tbody id="customer-list">
+            </tbody>
+        </table>
     </section>
-   <button><a href="../index.html">Voltar</a></button>
-    
+    <button id="voltar"><a href="../index.html">Voltar</a></button>
+
 </body>
+
 </html>

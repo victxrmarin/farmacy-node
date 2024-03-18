@@ -7,21 +7,29 @@ function listCustomers() {
     fetch('http://localhost:3000/customer')
         .then(response => response.json())
         .then(data => {
+            const deleteButton = document.createElement('button');
+            const editButton = document.createElement('button');
             customerList.innerHTML = '';
             data.forEach(customer => {
                 autoIncrement = data.length + 1
                 const deleteButton = document.createElement('button');
-                const tr = document.createElement('tr');
-                tr.innerHTML = `<td>${customer.id} </td>
-                                <td>${customer.name} </td>
-                                <td>${customer.email} </td>
-                                <td>${customer.phone_number} </td>
-                                <td>${deleteButton} </td>`;
-                
+                const editButton = document.createElement('button');
+                const table = document.createElement('div');
+                table.innerHTML = `
+                            <tr>
+                                <td contenteditable="false" id=customer${customer.id}>${customer.id} </td>
+                                <td contenteditable="false" id=customer${customer.id}>${customer.name} </td>
+                                <td contenteditable="false" id=customer${customer.id}>${customer.email} </td>
+                                <td contenteditable="false" id=customer${customer.id}>${customer.phone_number} </td>
+                            </tr>`;
+                tr.appendChild(deleteButton);
+                tr.appendChild(editButton)
                 customerList.appendChild(tr);
                 deleteButton.textContent = 'Excluir';
                 deleteButton.addEventListener('click', () => deleteCustomer(customer));
-                tr.appendChild(deleteButton);
+                editButton.textContent = 'Editar'
+                editButton.addEventListener('click', ()=> editCustomer(customer));
+
             });
         })
         .catch(error => console.error('Erro:', error));
@@ -47,6 +55,10 @@ customerForm.addEventListener('submit', (e) => {
     })
     .catch(error => console.error('Erro:', error));
 });
+
+function editCustomer(customer) {
+    const customerInfos = document.querySelectorAll('.customer' + customer.id);
+}
 
 function deleteCustomer(customer){
     fetch(`http://localhost:3000/customer/${customer.id}`, {
