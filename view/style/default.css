@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    background-color: rgb(59, 59, 59);
+}
+
+aside {
+    padding: 2%;
+    color: whitesmoke;
+    background-color: rgb(19, 19, 19);
+    height: 100vh;
+    width: 20%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    margin-top: 5%;
+    position: relative;
+}
+
+button {
+    position: absolute;
+    bottom: 2%;
+    left: 1%;
+}
+
+section {
+    margin-top: 2%;
+    margin-left: 10%;
+}
+
+section li {
+    width: 150%;
+    margin-top: 1px;
+    border: 1px solid black;
+    list-style: none;
+    background-color: grey;
+}
+
+ul li button {
+    position: relative;
+}
+
+th {
+    color: black;
+}

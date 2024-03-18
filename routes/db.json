@@ -1,18 +1,11 @@
 {
-  "Medicines": [
-    {
-      "id": 1,
-      "name": "Name",
-      "producer": "Name",
-      "quantity": 23
-    }
-  ],
+  "Medicines": [],
   "Customers": [
     {
       "id": 1,
-      "name": "Name",
-      "email": "example@email.com",
-      "phone_number": 40028922
+      "name": "Victor Marin",
+      "email": "victormarin.dev@gmail.com",
+      "phone_number": "51984871884"
     }
   ],
   "Suppliers": [

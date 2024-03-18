@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", (req, res) => {
   const newCustomer = req.body;
-  if (!newCustomer.name || !newCustomer.address || !newCustomer.email) {
+  if (!newCustomer.name || !newCustomer.phone_number || !newCustomer.email) {
     return res.status(400).json({ message: "Data Incompleted" });
   } else {
     db.Customers.push(newCustomer);
@@ -30,7 +30,7 @@ router.put("/:id", (req, res) => {
   }
 
   db.Customers[index].name = update.name || db.Customers[index].name;
-  db.Customers[index].address = update.address || db.Customers[index].address;
+  db.Customers[index].phone_number = update.phone_number || db.Customers[index].phone_number;
   db.Customers[index].email = update.email || db.Customers[index].email;
 
   saveData(db);

@@ -3,10 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style/default.css">
     <title>Supplier's List</title>
 </head>
 <body>
-    
+    <h1>Supplier</h1>
+        <form id="sale-form">
+            <label for="name">Name:</label>
+            <input type="text" id="date" required>
+
+            <label for="address">Address:</label>
+            <input type="text" id="address" required>
+
+            <label for="phone">Phone:</label>
+            <input type="number" id="phone" required>
+            <button type="submit">Add Supplier</button>
+        </form>
+    </aside>
+    <section>
+        <h1>Supplier's List</h1>
+        <ul id="sale-list"></ul>
+    </section>
+    <button><a href="../index.html">Voltar</a></button>
 </body>
 </html>
