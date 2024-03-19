@@ -19,22 +19,28 @@ router.get("/", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
-  const customerID = parseInt(req.params.id);
-  const update = req.body;
-  const index = db.Customers.findIndex(
-    (Customers) => Customers.id === customerID
-  );
+  const id = parseInt(req.params.id);
+  const { name, email, phone_number } = req.body;
 
-  if (index == -1) {
-    return res.status(404).json({ message: "Customers not founded." });
+  // Procura o cliente na lista pelo ID
+  const customerIndex = db.Customers.findIndex(customer => customer.id === id);
+
+  // Se o cliente não foi encontrado, retorna um erro
+  if (customerIndex === -1) {
+      return res.status(404).json({ error: 'Cliente não encontrado' });
   }
 
-  db.Customers[index].name = update.name || db.Customers[index].name;
-  db.Customers[index].phone_number = update.phone_number || db.Customers[index].phone_number;
-  db.Customers[index].email = update.email || db.Customers[index].email;
+  // Atualiza os dados do cliente com os valores fornecidos
+  db.Customers[customerIndex] = {
+      ...db.Customers[customerIndex],
+      name: name || customers[customerIndex].name,
+      email: email || customers[customerIndex].email,
+      phone_number: phone_number || customers[customerIndex].phone_number
+  };
 
   saveData(db);
-  return res.json({ message: "Update sucessfully." });
+  // Retorna os dados atualizados do cliente
+  res.json(db.Customers[customerIndex]);
 });
 
 router.delete("/:id", (req, res) => {
