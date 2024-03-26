@@ -21,9 +21,7 @@ router.get("/", (req, res) => {
 router.put("/:id", (req, res) => {
   const saleID = parseInt(req.params.id);
   const update = req.body;
-  const index = db.Sales.findIndex(
-    (Sales) => Sales.id === saleID
-  );
+  const index = db.Sales.findIndex((Sales) => Sales.id === saleID);
 
   if (index == -1) {
     return res.status(404).json({ message: "Sales not founded." });

@@ -1,57 +1,27 @@
 {
-  "Medicines": [],
+  "Medicines": [
+    {
+      "id": 1,
+      "name": "ritalina ",
+      "producer": "v ",
+      "quantity": "23 "
+    }
+  ],
   "Customers": [
     {
       "id": 1,
-      "name": "Victor Marin",
+      "name": "Victor Yan",
       "email": "victormarin.dev@gmail.com",
-      "phone_number": "51984871884"
-    },
-    {
-      "id": 2,
-      "name": "iuit ",
-      "email": "sadas!dsads ",
-      "phone_number": "5"
-    },
-    {
-      "id": 3,
-      "name": "iuit ",
-      "email": "sadas!dsads ",
-      "phone_number": "5"
-    },
-    {
-      "id": 4,
-      "name": "iuit ",
-      "email": "sadas!dsads ",
-      "phone_number": "5"
-    },
-    {
-      "id": 5,
-      "name": "a ",
-      "email": "a ",
-      "phone_number": "44aaaaa"
-    },
-    {
-      "id": 6,
-      "name": "kainna ",
-      "email": "shdjahsdjk@hotmail.com",
-      "phone_number": "435453534 "
+      "phone_number": "123454"
     }
   ],
-  "Suppliers": [
-    {
-      "id": 1,
-      "name": "Name",
-      "address": "123, Street",
-      "phone_number": 40028922
-    }
-  ],
+  "Suppliers": [],
   "Sales": [
     {
-      "id": 2,
-      "date": "2023-10-23",
-      "id_medicine": 2,
-      "id_customer": 3
+      "id": 1,
+      "date": "2024-03-01",
+      "id_medicine": "2",
+      "id_customer": "1"
     }
   ]
 }
